@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsevbrd3k5brh"]
+
+[ext_resource type="Script" path="res://sentence_about_me.gd" id="1_omhj7"]
+[ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="2_apc2g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q7vw6"]
+font_size = 52
+font_color = Color(1, 0.180392, 0.47451, 1)
+
+[node name="Sentence About Me" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_top = 159.0
+offset_right = 240.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_omhj7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -235.0
+offset_top = 37.0
+offset_right = 906.0
+offset_bottom = 198.0
+text = "+"
+label_settings = SubResource("LabelSettings_q7vw6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Show" type="Button" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 203.0
+offset_right = 169.0
+offset_bottom = 249.0
+theme = ExtResource("2_apc2g")
+text = "Show"
+
+[node name="Show2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 202.0
+offset_right = 318.0
+offset_bottom = 248.0
+theme = ExtResource("2_apc2g")
+text = "Clear"
+
+[node name="Show3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 203.0
+offset_right = 470.0
+offset_bottom = 249.0
+theme = ExtResource("2_apc2g")
+text = "Exit"
+
+[connection signal="pressed" from="Show" to="." method="_on_show_pressed"]
+[connection signal="pressed" from="Show2" to="." method="_on_show_2_pressed"]
+[connection signal="pressed" from="Show3" to="." method="_on_show_3_pressed"]
