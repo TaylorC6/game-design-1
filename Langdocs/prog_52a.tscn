@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://csfhhrcj8qngr"]
+
+[ext_resource type="Script" path="res://Langdocs/prog_52a.gd" id="1_04y7t"]
+[ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="2_x7dnr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_geabe"]
+font_size = 52
+
+[sub_resource type="FontFile" id="FontFile_7ids3"]
+cache/0/52/0/ascent = 0.0
+cache/0/52/0/descent = 0.0
+cache/0/52/0/underline_position = 0.0
+cache/0/52/0/underline_thickness = 0.0
+cache/0/52/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8kn3k"]
+font = SubResource("FontFile_7ids3")
+font_size = 52
+
+[node name="Prog52a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_04y7t")
+
+[node name="LblLength" type="Label" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 48.0
+offset_right = 222.0
+offset_bottom = 120.0
+text = "Length:"
+label_settings = SubResource("LabelSettings_geabe")
+
+[node name="LblWidth" type="Label" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 157.0
+offset_right = 222.0
+offset_bottom = 229.0
+text = "Width:"
+label_settings = SubResource("LabelSettings_geabe")
+
+[node name="LblArea" type="Label" parent="."]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 269.0
+offset_right = 981.0
+offset_bottom = 413.0
+text = "Area:"
+label_settings = SubResource("LabelSettings_8kn3k")
+horizontal_alignment = 1
+
+[node name="LblPerim" type="Label" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 424.0
+offset_right = 986.0
+offset_bottom = 568.0
+text = "Perimeter:"
+label_settings = SubResource("LabelSettings_8kn3k")
+horizontal_alignment = 1
+
+[node name="txtLen" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 52.0
+offset_right = 653.0
+offset_bottom = 129.0
+theme = ExtResource("2_x7dnr")
+
+[node name="txtWid" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 166.0
+offset_right = 653.0
+offset_bottom = 243.0
+theme = ExtResource("2_x7dnr")
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 548.0
+offset_right = 360.0
+offset_bottom = 620.0
+theme = ExtResource("2_x7dnr")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 541.0
+offset_right = 632.0
+offset_bottom = 613.0
+theme = ExtResource("2_x7dnr")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 721.0
+offset_top = 542.0
+offset_right = 923.0
+offset_bottom = 614.0
+theme = ExtResource("2_x7dnr")
+text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
