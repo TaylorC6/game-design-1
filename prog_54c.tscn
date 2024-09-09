@@ -48,6 +48,7 @@ offset_left = 284.0
 offset_top = 25.0
 offset_right = 703.0
 offset_bottom = 106.0
+theme = ExtResource("2_phm0h")
 
 [node name="btnCalc" type="Button" parent="."]
 layout_mode = 0
