@@ -30,6 +30,7 @@ offset_left = 740.0
 offset_top = 47.0
 offset_right = 1138.0
 offset_bottom = 138.0
+theme = ExtResource("2_w7fmu")
 
 [node name="lblOut" type="Label" parent="."]
 layout_mode = 0
@@ -38,6 +39,8 @@ offset_top = 174.0
 offset_right = 762.0
 offset_bottom = 421.0
 theme = ExtResource("2_w7fmu")
+text = "Price Per Dozen:
+Total Cost:"
 
 [node name="btnCalc" type="Button" parent="."]
 layout_mode = 0

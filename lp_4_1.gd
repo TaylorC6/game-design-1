@@ -17,7 +17,7 @@ func _on_btn_calc_pressed() -> void:
 	elif copies > 1000:
 		price = 0.25
 	else:
-		$lblOut.text = "Invalid # of copies"
+		$lblOut.text = "Invalid # of Copies"
 		return
 	tcost = price * copies
 	$lblOut.text = "Price Per Copy: $" + str(price) + \

@@ -15,13 +15,19 @@ func _on_btn_calc_pressed() -> void:
 		price = 0.40
 	elif dozens > 11:
 		price = 0.35
+	else:
+		$lblOut.text = "! Invalid # of Dozens !"
+		return
 	
-	tcost = dozens * price + (remainder * ((1 / 12) * price))
-	
+	tcost = (dozens * price) + (remainder * ((1.0 / 12) * price))
+
+	$lblOut.text = "Price Per Dozen: $%.2f" % price + \
+	"\nTotal Cost: $%.2f" % tcost
 
 
 func _on_btn_clear_pressed() -> void:
-	$lblOut.text = ""
+	$lblOut.text = "Price Per Dozen: $" + \
+	"\nTotal Cost: $"
 
 
 func _on_btn_exit_pressed() -> void:
