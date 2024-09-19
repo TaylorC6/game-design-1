@@ -14,11 +14,13 @@ grow_vertical = 2
 script = ExtResource("1_u0ea8")
 
 [node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 469.0
 theme = ExtResource("1_fx1c7")
 
 [node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
 offset_left = 154.0
 offset_top = 503.0
 offset_right = 393.0
@@ -27,6 +29,7 @@ theme = ExtResource("2_uajcv")
 text = "Calculate"
 
 [node name="btnClear" type="Button" parent="."]
+layout_mode = 0
 offset_left = 443.0
 offset_top = 503.0
 offset_right = 682.0
@@ -35,6 +38,7 @@ theme = ExtResource("2_uajcv")
 text = "Clear"
 
 [node name="btnExit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 734.0
 offset_top = 503.0
 offset_right = 973.0
