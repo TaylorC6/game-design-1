@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://duocwami4cena"]
+[gd_scene load_steps=4 format=3 uid="uid://daqx1ivlfffmv"]
 
-[ext_resource type="Script" path="res://prog_122h.gd" id="1_4pms1"]
-[ext_resource type="Theme" uid="uid://chp13krld84ky" path="res://Biggish Font.tres" id="2_d7byp"]
-[ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="3_gjfgk"]
+[ext_resource type="Script" path="res://prog_152a.gd" id="1_43r6o"]
+[ext_resource type="Theme" uid="uid://chp13krld84ky" path="res://Biggish Font.tres" id="2_jupqi"]
+[ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="3_kfhno"]
 
-[node name="prog_122h" type="Control"]
+[node name="Prog_152a" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4pms1")
+script = ExtResource("1_43r6o")
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 469.0
-theme = ExtResource("2_d7byp")
+theme = ExtResource("2_jupqi")
 
 [node name="btnCalc" type="Button" parent="."]
 layout_mode = 0
@@ -25,7 +25,7 @@ offset_left = 154.0
 offset_top = 503.0
 offset_right = 393.0
 offset_bottom = 587.0
-theme = ExtResource("3_gjfgk")
+theme = ExtResource("3_kfhno")
 text = "Calculate"
 
 [node name="btnClear" type="Button" parent="."]
@@ -34,7 +34,7 @@ offset_left = 443.0
 offset_top = 503.0
 offset_right = 682.0
 offset_bottom = 587.0
-theme = ExtResource("3_gjfgk")
+theme = ExtResource("3_kfhno")
 text = "Clear"
 
 [node name="btnExit" type="Button" parent="."]
@@ -43,7 +43,7 @@ offset_left = 734.0
 offset_top = 503.0
 offset_right = 973.0
 offset_bottom = 587.0
-theme = ExtResource("3_gjfgk")
+theme = ExtResource("3_kfhno")
 text = "Exit"
 
 [connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
