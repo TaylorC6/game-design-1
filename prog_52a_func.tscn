@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://hqp7f0b6g4in"]
+
+[ext_resource type="Script" path="res://prog_52a_func.gd" id="1_a82q4"]
+[ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="2_io7id"]
+
+[node name="Prog_52a_Func" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a82q4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 54.0
+offset_right = 314.0
+offset_bottom = 147.0
+theme = ExtResource("2_io7id")
+text = "Length:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 148.0
+offset_right = 314.0
+offset_bottom = 241.0
+theme = ExtResource("2_io7id")
+text = "Width:"
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 237.0
+offset_right = 1114.0
+offset_bottom = 481.0
+theme = ExtResource("2_io7id")
+
+[node name="txtLen" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 66.0
+offset_right = 674.0
+offset_bottom = 132.0
+
+[node name="txtWid" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 155.0
+offset_right = 674.0
+offset_bottom = 221.0
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 555.0
+offset_right = 329.0
+offset_bottom = 617.0
+theme = ExtResource("2_io7id")
+text = "Show"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 555.0
+offset_right = 599.0
+offset_bottom = 635.0
+theme = ExtResource("2_io7id")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 555.0
+offset_right = 867.0
+offset_bottom = 635.0
+theme = ExtResource("2_io7id")
+text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

@@ -1,0 +1,161 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy1vnf1he8jr1"]
+
+[ext_resource type="Script" path="res://my_calculator.gd" id="1_b1e1d"]
+[ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="2_redeu"]
+
+[sub_resource type="Theme" id="Theme_5s8rd"]
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_bqv31"]
+default_font_size = 36
+
+[node name="MyCalculator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b1e1d")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 20.0
+offset_right = 207.0
+offset_bottom = 92.0
+theme = ExtResource("2_redeu")
+text = "Num1:"
+
+[node name="lblOp" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 120.0
+offset_right = 284.0
+offset_bottom = 192.0
+theme = SubResource("Theme_5s8rd")
+text = "Operation:"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 209.0
+offset_right = 207.0
+offset_bottom = 281.0
+theme = ExtResource("2_redeu")
+text = "Num2:"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 369.0
+offset_right = 209.0
+offset_bottom = 441.0
+theme = ExtResource("2_redeu")
+text = "Result:"
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 369.0
+offset_right = 669.0
+offset_bottom = 441.0
+theme = ExtResource("2_redeu")
+
+[node name="txtNum1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 21.0
+offset_right = 529.0
+offset_bottom = 100.0
+theme = ExtResource("2_redeu")
+
+[node name="txtNum2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 215.0
+offset_right = 529.0
+offset_bottom = 295.0
+theme = ExtResource("2_redeu")
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 524.0
+offset_right = 524.0
+offset_bottom = 605.0
+theme = ExtResource("2_redeu")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 524.0
+offset_right = 841.0
+offset_bottom = 605.0
+theme = ExtResource("2_redeu")
+text = "Exit"
+
+[node name="btnAdd" type="Button" parent="."]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 57.0
+offset_right = 715.0
+offset_bottom = 138.0
+theme = ExtResource("2_redeu")
+text = "+"
+
+[node name="btnSub" type="Button" parent="."]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 57.0
+offset_right = 830.0
+offset_bottom = 138.0
+theme = ExtResource("2_redeu")
+text = "-"
+
+[node name="btnMult" type="Button" parent="."]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 57.0
+offset_right = 952.0
+offset_bottom = 138.0
+theme = ExtResource("2_redeu")
+text = "*"
+
+[node name="btnMod" type="Button" parent="."]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 170.0
+offset_right = 953.0
+offset_bottom = 251.0
+theme = SubResource("Theme_bqv31")
+text = "Mod"
+
+[node name="btnDiv" type="Button" parent="."]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 170.0
+offset_right = 715.0
+offset_bottom = 251.0
+theme = ExtResource("2_redeu")
+text = "/"
+
+[node name="btnPow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 170.0
+offset_right = 830.0
+offset_bottom = 251.0
+theme = ExtResource("2_redeu")
+text = "**"
+
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="btnAdd" to="." method="_on_btn_add_pressed"]
+[connection signal="pressed" from="btnSub" to="." method="_on_btn_sub_pressed"]
+[connection signal="pressed" from="btnMult" to="." method="_on_btn_mult_pressed"]
+[connection signal="pressed" from="btnMod" to="." method="_on_btn_mod_pressed"]
+[connection signal="pressed" from="btnDiv" to="." method="_on_btn_div_pressed"]
+[connection signal="pressed" from="btnPow" to="." method="_on_btn_pow_pressed"]
