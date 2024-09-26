@@ -51,10 +51,10 @@ func _on_btn_mod_pressed() -> void:
 
 
 func _on_btn_div_pressed() -> void:
-	var n1 = int($txtNum1.text)
-	var n2 = int($txtNum2.text)
+	var n1 = float($txtNum1.text)
+	var n2 = float($txtNum2.text)
 	var result = myDiv(n1, n2)
-	$lblOut.text = "" + str(result)
+	$lblOut.text = "%.3f" % result
 	$lblOp.text = "Operation: /"
 
 
