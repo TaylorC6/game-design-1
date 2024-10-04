@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://m0fvxfyc3m57"]
+[gd_scene load_steps=8 format=3 uid="uid://m0fvxfyc3m57"]
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_omtyi"]
+[ext_resource type="PackedScene" uid="uid://b4kyxiuvcpuq" path="res://plt_enemy.tscn" id="2_2tqt2"]
+[ext_resource type="PackedScene" uid="uid://cjyhu2sg8os1j" path="res://draggable.tscn" id="2_adag6"]
+[ext_resource type="PackedScene" uid="uid://uv5i2akpxsle" path="res://interact.tscn" id="2_or3lx"]
 [ext_resource type="PackedScene" uid="uid://dp3dcd14tvh78" path="res://plt_player.tscn" id="2_yi64q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjrv4"]
@@ -11,13 +14,31 @@ size = Vector2(82.75, 15)
 [node name="plt_world1" type="Node2D"]
 script = ExtResource("1_omtyi")
 
+[node name="plt_enemy4" parent="." instance=ExtResource("2_2tqt2")]
+position = Vector2(168, 645)
+
+[node name="plt_enemy3" parent="." instance=ExtResource("2_2tqt2")]
+position = Vector2(445, 586)
+
+[node name="plt_enemy2" parent="." instance=ExtResource("2_2tqt2")]
+position = Vector2(759, 577)
+
+[node name="plt_enemy" parent="." instance=ExtResource("2_2tqt2")]
+position = Vector2(908, 559)
+
+[node name="draggable" parent="." instance=ExtResource("2_adag6")]
+position = Vector2(622, 292)
+
+[node name="interact" parent="." instance=ExtResource("2_or3lx")]
+position = Vector2(1109, 192)
+
 [node name="plt_player" parent="." instance=ExtResource("2_yi64q")]
 position = Vector2(136, 504)
 
 [node name="World" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
-polygon = PackedVector2Array(-2, -14, 68, 179, 22, 324, 51, 434, 65, 572, 130, 578, 147, 654, 185, 654, 212, 612, 232, 549, 262, 525, 271, 479, 293, 457, 320, 457, 331, 527, 396, 592, 495, 598, 522, 573, 543, 488, 574, 465, 590, 424, 661, 411, 676, 476, 716, 491, 707, 556, 732, 587, 786, 592, 818, 534, 803, 473, 828, 454, 862, 476, 859, 513, 874, 544, 905, 570, 937, 533, 943, 437, 994, 418, 1026, 374, 1074, 364, 1108, 329, 1092, 277, 1113, 272, 1123, 239, 1146, 221, 1149, -32, 1194, -21, 1224, 451, 1205, 677, -57, 688)
+polygon = PackedVector2Array(-2, -14, 68, 179, 22, 324, 51, 434, 65, 572, 130, 578, 147, 654, 185, 654, 212, 612, 232, 549, 262, 525, 271, 479, 293, 457, 320, 457, 331, 527, 396, 592, 495, 598, 522, 573, 543, 488, 574, 465, 590, 424, 661, 411, 676, 476, 716, 491, 707, 556, 732, 587, 786, 592, 818, 534, 803, 473, 828, 454, 862, 476, 859, 513, 865, 529, 875, 531, 874, 544, 883, 569, 905, 570, 930, 570, 937, 533, 943, 437, 994, 418, 1026, 374, 1074, 364, 1102, 331, 1089, 286, 1106, 285, 1113, 272, 1123, 239, 1146, 221, 1149, -32, 1194, -21, 1224, 451, 1205, 677, -57, 688)
 
 [node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
 
@@ -28,6 +49,30 @@ position = Vector2(136, 527)
 shape = SubResource("RectangleShape2D_sjrv4")
 
 [node name="Sprite2D" type="Sprite2D" parent="StartPlatform/CollisionShape2D"]
+position = Vector2(-0.125, -0.5)
+scale = Vector2(83, 15)
+texture = SubResource("PlaceholderTexture2D_lal6q")
+
+[node name="StartPlatform2" type="StaticBody2D" parent="."]
+position = Vector2(298, -94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartPlatform2"]
+position = Vector2(136, 527)
+shape = SubResource("RectangleShape2D_sjrv4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StartPlatform2/CollisionShape2D"]
+position = Vector2(-0.125, -0.5)
+scale = Vector2(83, 15)
+texture = SubResource("PlaceholderTexture2D_lal6q")
+
+[node name="StartPlatform3" type="StaticBody2D" parent="."]
+position = Vector2(686, -138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartPlatform3"]
+position = Vector2(136, 527)
+shape = SubResource("RectangleShape2D_sjrv4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StartPlatform3/CollisionShape2D"]
 position = Vector2(-0.125, -0.5)
 scale = Vector2(83, 15)
 texture = SubResource("PlaceholderTexture2D_lal6q")
