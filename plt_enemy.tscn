@@ -1,25 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4kyxiuvcpuq"]
+[gd_scene load_steps=9 format=3 uid="uid://b4kyxiuvcpuq"]
 
 [ext_resource type="Script" path="res://plt_enemy.gd" id="1_c1ofk"]
 [ext_resource type="Texture2D" uid="uid://dprfs0betmr56" path="res://icon.svg" id="2_8uacm"]
+[ext_resource type="Texture2D" uid="uid://do86gyye7480e" path="res://assets/Sprites/characters.png" id="3_3u5po"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqdm4"]
-size = Vector2(17, 15)
+[sub_resource type="AtlasTexture" id="AtlasTexture_m32n8"]
+atlas = ExtResource("3_3u5po")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we372"]
+atlas = ExtResource("3_3u5po")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7rek"]
+atlas = ExtResource("3_3u5po")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvl3k"]
+atlas = ExtResource("3_3u5po")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2t2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m32n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we372")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7rek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvl3k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="plt_enemy" type="RigidBody2D"]
+lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_c1ofk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kqdm4")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.405185, 0.0593207, 0, 1)
 scale = Vector2(0.140625, 0.125)
 texture = ExtResource("2_8uacm")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.249999, -10.25)
+scale = Vector2(1.17187, 1.17187)
+sprite_frames = SubResource("SpriteFrames_o2t2e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -1, -3, -6, -1, -9, 7, -9, 10, -5, 10, -4, 8, 0, 6, 6, 3, 8, -9, 8, -7, -1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

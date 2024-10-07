@@ -18,3 +18,10 @@ func _on_body_entered(body: Node) -> void:
 		body.queue_free()
 		OS.alert("You Died!")
 		get_tree().reload_current_scene()
+
+	update_animation(direction)
+
+@onready var anim = $AnimatedSprite2D
+func update_animation(direction):
+	anim.play("default")
+	anim.flip_h = direction < 0 # flip sprite if moving left
