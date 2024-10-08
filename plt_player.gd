@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var JUMP_VELOCITY = -400.0
 var gravity_on = true
 
 func _physics_process(delta: float) -> void:
@@ -28,8 +28,10 @@ func _physics_process(delta: float) -> void:
 		gravity_on = not gravity_on
 	if Input.is_action_just_pressed("ui_home"): # Home
 		self.scale *= 2
+		JUMP_VELOCITY *= 1.5
 	if Input.is_action_just_pressed("ui_end"): # End
 		self.scale /= 2
+		JUMP_VELOCITY /= 1.5
 	if Input.is_action_just_pressed("ui_page_up"): # Page Up
 		self.rotation_degrees += 5
 	if Input.is_action_just_pressed("ui_page_down"): # Page Down
