@@ -87,7 +87,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="plt_player" type="CharacterBody2D"]
+[node name="plt_player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_4eh4b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -103,7 +103,7 @@ shape = SubResource("CapsuleShape2D_m1fdt")
 zoom = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(1.125, 1.125)
+position = Vector2(0, -2.5)
+scale = Vector2(1.3125, 1.15625)
 sprite_frames = SubResource("SpriteFrames_3joe4")
 animation = &"walk"
