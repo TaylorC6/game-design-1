@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://dghipcc40ufmq"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_2xe3x"]
+
+[sub_resource type="Theme" id="Theme_gqdbu"]
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_12c0r"]
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_2hdof"]
+default_font_size = 35
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2xe3x")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+z_index = 415
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -58.0
+offset_right = 246.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_gqdbu")
+
+[node name="btn_resume" type="Button" parent="Panel/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+theme = SubResource("Theme_12c0r")
+text = "Resume"
+
+[node name="btn_quit" type="Button" parent="Panel/VBoxContainer"]
+z_index = 2
+layout_mode = 2
+theme = SubResource("Theme_2hdof")
+text = "Quit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/btn_resume" to="." method="_on_btn_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/btn_quit" to="." method="_on_btn_quit_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dp3dcd14tvh78"]
+[gd_scene load_steps=16 format=3 uid="uid://dp3dcd14tvh78"]
 
 [ext_resource type="Script" path="res://plt_player.gd" id="1_4eh4b"]
 [ext_resource type="Texture2D" uid="uid://dprfs0betmr56" path="res://icon.svg" id="2_1lnvc"]
 [ext_resource type="Texture2D" uid="uid://do86gyye7480e" path="res://assets/Sprites/characters.png" id="3_4gkhh"]
+[ext_resource type="PackedScene" uid="uid://dghipcc40ufmq" path="res://pause_menu.tscn" id="3_fkgsw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1fdt"]
 
@@ -101,6 +102,10 @@ shape = SubResource("CapsuleShape2D_m1fdt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("3_fkgsw")]
+visible = false
+z_index = 1000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2.5)
