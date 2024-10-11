@@ -1376,7 +1376,6 @@ texture = ExtResource("1_equ8d")
 49:27/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8jqv4"]
-load_path = "res://.godot/imported/phase-2_tree_log.png-fc063d2b3d6e59c7dee4616f1fed37ac.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ouc2l"]
 texture = SubResource("CompressedTexture2D_8jqv4")

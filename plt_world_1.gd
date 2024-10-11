@@ -1,8 +1,8 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$World/CollisionPolygon2D/Polygon2D.polygon = \
-	$World/CollisionPolygon2D.polygon
-	pass 
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "plt_player":
+		body.queue_free()
+		OS.alert("You Died!")
+		get_tree().reload_current_scene()
