@@ -1209,6 +1209,7 @@ position = Vector2(141, -152)
 
 [node name="Change_lvl" parent="." instance=ExtResource("1_tquce")]
 position = Vector2(979, 500)
+next_level = "plt_world_3"
 
 [node name="plt_enemy5" parent="." instance=ExtResource("2_wlq3a")]
 position = Vector2(211, 625)

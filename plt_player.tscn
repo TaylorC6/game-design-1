@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dghipcc40ufmq" path="res://pause_menu.tscn" id="3_fkgsw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dohf8"]
-radius = 10.5
+radius = 11.5
 height = 29.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1i05"]
@@ -111,7 +111,7 @@ visible = false
 z_index = 1000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(-1, -4)
 scale = Vector2(1.3125, 1.15625)
 sprite_frames = SubResource("SpriteFrames_3joe4")
 animation = &"walk"

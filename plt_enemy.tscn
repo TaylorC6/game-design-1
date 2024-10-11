@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltwgl"]
-size = Vector2(21, 18.5)
+size = Vector2(21, 17.5)
 
 [node name="plt_enemy" type="RigidBody2D"]
 lock_rotation = true
@@ -58,12 +58,12 @@ texture = ExtResource("2_8uacm")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.249999, -10.25)
+position = Vector2(-0.250079, -10.2501)
 scale = Vector2(1.17187, 1.17187)
 sprite_frames = SubResource("SpriteFrames_o2t2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -0.75)
+position = Vector2(-7.82013e-05, -0.25008)
 shape = SubResource("RectangleShape2D_ltwgl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

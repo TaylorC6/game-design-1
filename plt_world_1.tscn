@@ -1250,16 +1250,12 @@ position = Vector2(589, 431)
 [node name="plt_enemy3" parent="." instance=ExtResource("2_2tqt2")]
 position = Vector2(738, 431)
 
-[node name="plt_enemy4" parent="." instance=ExtResource("2_2tqt2")]
-position = Vector2(1127, 241)
-
 [node name="draggable" parent="." instance=ExtResource("2_adag6")]
 visible = false
 position = Vector2(688, -86)
 
 [node name="interact" parent="." instance=ExtResource("2_or3lx")]
-visible = false
-position = Vector2(746, -159)
+position = Vector2(1111, 183)
 
 [node name="plt_player" parent="." instance=ExtResource("2_yi64q")]
 z_index = 900
