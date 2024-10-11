@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://do86gyye7480e" path="res://assets/Sprites/characters.png" id="3_4gkhh"]
 [ext_resource type="PackedScene" uid="uid://dghipcc40ufmq" path="res://pause_menu.tscn" id="3_fkgsw"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1fdt"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dohf8"]
+radius = 10.5
+height = 29.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1i05"]
 atlas = ExtResource("3_4gkhh")
@@ -98,7 +100,8 @@ scale = Vector2(0.15625, 0.234375)
 texture = ExtResource("2_1lnvc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_m1fdt")
+position = Vector2(-0.5, -0.5)
+shape = SubResource("CapsuleShape2D_dohf8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -108,7 +111,7 @@ visible = false
 z_index = 1000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2.5)
+position = Vector2(0, -4)
 scale = Vector2(1.3125, 1.15625)
 sprite_frames = SubResource("SpriteFrames_3joe4")
 animation = &"walk"
