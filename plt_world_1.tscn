@@ -1255,13 +1255,14 @@ position = Vector2(1127, 241)
 
 [node name="draggable" parent="." instance=ExtResource("2_adag6")]
 visible = false
-position = Vector2(622, 292)
+position = Vector2(688, -86)
 
 [node name="interact" parent="." instance=ExtResource("2_or3lx")]
 visible = false
-position = Vector2(1109, 192)
+position = Vector2(746, -159)
 
 [node name="plt_player" parent="." instance=ExtResource("2_yi64q")]
+z_index = 900
 position = Vector2(82, 439)
 
 [node name="Change_lvl" parent="." instance=ExtResource("6_y65ie")]

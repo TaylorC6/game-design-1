@@ -6,7 +6,7 @@ var direction = -1
 func _ready() -> void:
 	$Timer.start()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	self.linear_velocity.x = speed * direction
 
 func _on_timer_timeout() -> void:
