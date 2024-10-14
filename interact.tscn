@@ -1056,7 +1056,6 @@ script = ExtResource("1_de8le")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.785398
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cuuj4")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

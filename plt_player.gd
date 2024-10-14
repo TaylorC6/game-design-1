@@ -59,7 +59,7 @@ func update_animation(direction):
 	if not self.is_on_floor():
 		anim.play("jump")
 	elif direction != 0: # walking
-		anim.play("walk")
+		anim.play("walk_1")
 		anim.flip_h = direction < 0 # flip sprite if moving left
 	else: 
 		anim.play("default")
