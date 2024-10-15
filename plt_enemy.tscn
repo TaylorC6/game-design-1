@@ -1,39 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4kyxiuvcpuq"]
+[gd_scene load_steps=8 format=3 uid="uid://b4kyxiuvcpuq"]
 
 [ext_resource type="Script" path="res://plt_enemy.gd" id="1_c1ofk"]
 [ext_resource type="Texture2D" uid="uid://dprfs0betmr56" path="res://icon.svg" id="2_8uacm"]
-[ext_resource type="Texture2D" uid="uid://do86gyye7480e" path="res://assets/Sprites/characters.png" id="3_3u5po"]
+[ext_resource type="Texture2D" uid="uid://bi4sxef8creuk" path="res://assets/Sprites/enemies_spritesheet.png" id="3_25tld"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m32n8"]
-atlas = ExtResource("3_3u5po")
-region = Rect2(0, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuemh"]
+atlas = ExtResource("3_25tld")
+region = Rect2(52, 125, 50, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_we372"]
-atlas = ExtResource("3_3u5po")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7rek"]
-atlas = ExtResource("3_3u5po")
-region = Rect2(64, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mvl3k"]
-atlas = ExtResource("3_3u5po")
-region = Rect2(96, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgkrg"]
+atlas = ExtResource("3_25tld")
+region = Rect2(0, 125, 50, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o2t2e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m32n8")
+"texture": SubResource("AtlasTexture_kuemh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_we372")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f7rek")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mvl3k")
+"texture": SubResource("AtlasTexture_xgkrg")
 }],
 "loop": true,
 "name": &"default",
@@ -41,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltwgl"]
-size = Vector2(21, 17.5)
+size = Vector2(25.9998, 16)
 
 [node name="plt_enemy" type="RigidBody2D"]
 lock_rotation = true
@@ -58,12 +44,12 @@ texture = ExtResource("2_8uacm")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.250079, -10.2501)
-scale = Vector2(1.17187, 1.17187)
+position = Vector2(2, 0)
+scale = Vector2(0.514506, 0.514506)
 sprite_frames = SubResource("SpriteFrames_o2t2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7.82013e-05, -0.25008)
+position = Vector2(-7.82013e-05, -1)
 shape = SubResource("RectangleShape2D_ltwgl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
