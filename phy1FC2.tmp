@@ -14,7 +14,7 @@ size = Vector2(1231.5, 83)
 script = ExtResource("1_cda3m")
 
 [node name="phys_ball" parent="." instance=ExtResource("1_ho6ng")]
-position = Vector2(586, -152)
+position = Vector2(982, 152)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -23,15 +23,6 @@ position = Vector2(598, 694)
 shape = SubResource("RectangleShape2D_jiowq")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
-position = Vector2(-1.24997, -0.999992)
-scale = Vector2(1234, 86)
-texture = SubResource("PlaceholderTexture2D_0pryb")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(591, -47)
-shape = SubResource("RectangleShape2D_jiowq")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D4"]
 position = Vector2(-1.24997, -0.999992)
 scale = Vector2(1234, 86)
 texture = SubResource("PlaceholderTexture2D_0pryb")
@@ -58,11 +49,20 @@ position = Vector2(-1.24997, -0.999992)
 scale = Vector2(1234, 86)
 texture = SubResource("PlaceholderTexture2D_0pryb")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(575, -46)
+shape = SubResource("RectangleShape2D_jiowq")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D4"]
+position = Vector2(-1.24997, -0.999992)
+scale = Vector2(1234, 86)
+texture = SubResource("PlaceholderTexture2D_0pryb")
+
 [node name="Panel" type="Panel" parent="."]
 offset_left = 2.0
 offset_top = -2.0
 offset_right = 641.0
-offset_bottom = 647.0
+offset_bottom = 582.0
 scale = Vector2(0.717688, 0.717688)
 
 [node name="Label" type="Label" parent="Panel"]
@@ -93,32 +93,23 @@ theme = ExtResource("3_ecmlr")
 text = "Apply Force
 "
 
-[node name="Label3" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel/Button"]
 layout_mode = 0
-offset_left = 8.36017
-offset_top = 413.829
-offset_right = 335.36
-offset_bottom = 485.829
+offset_left = -8.63983
+offset_top = 337.829
+offset_right = 172.36
+offset_bottom = 409.829
 theme = ExtResource("2_garnq")
-text = "Acceleration X:"
-
-[node name="Label5" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 8.36018
-offset_top = 487.677
-offset_right = 335.36
-offset_bottom = 559.677
-theme = ExtResource("2_garnq")
-text = "Acceleration Y:"
+text = "Acceleration:"
 
 [node name="btnAcc" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 18.1137
-offset_top = 561.525
-offset_right = 624.114
-offset_bottom = 632.525
+offset_left = 21.3602
+offset_top = 485.829
+offset_right = 627.36
+offset_bottom = 556.829
 theme = ExtResource("3_ecmlr")
-text = "Clear Balls
+text = "Apply Force
 "
 
 [node name="Label2" type="Label" parent="Panel"]
@@ -166,17 +157,10 @@ offset_bottom = 320.0
 
 [node name="txtAcc" type="LineEdit" parent="Panel"]
 layout_mode = 0
-offset_left = 391.535
-offset_top = 489.07
-offset_right = 619.535
-offset_bottom = 552.07
-
-[node name="txtAcc2" type="LineEdit" parent="Panel"]
-layout_mode = 0
-offset_left = 391.535
-offset_top = 418.009
-offset_right = 619.535
-offset_bottom = 481.009
+offset_left = 349.734
+offset_top = 412.435
+offset_right = 622.734
+offset_bottom = 475.435
 
 [node name="txtVelY" type="LineEdit" parent="Panel"]
 layout_mode = 0
@@ -187,5 +171,4 @@ offset_bottom = 322.0
 
 [connection signal="value_changed" from="Panel/Grav_Slider" to="." method="_on_grav_slider_value_changed"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/btnAcc" to="." method="_on_btn_acc_pressed"]
 [connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
