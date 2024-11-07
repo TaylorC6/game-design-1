@@ -1,8 +1,9 @@
-[gd_scene load_steps=49 format=3 uid="uid://bcvi4j7mfmuyo"]
+[gd_scene load_steps=50 format=3 uid="uid://bcvi4j7mfmuyo"]
 
 [ext_resource type="Script" path="res://td_player.gd" id="1_rcv6b"]
 [ext_resource type="Texture2D" uid="uid://cnlrfsyvgjjuc" path="res://assets/Sprites/character.png" id="1_txs66"]
 [ext_resource type="PackedScene" uid="uid://dghipcc40ufmq" path="res://pause_menu.tscn" id="3_w7o5x"]
+[ext_resource type="PackedScene" uid="uid://dmp7i6t2b4s00" path="res://hud.tscn" id="4_0f2wp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmoy6"]
 atlas = ExtResource("1_txs66")
@@ -364,8 +365,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28uyl"]
-radius = 8.0
-height = 22.0
+radius = 6.0
+height = 12.0
 
 [node name="td_player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_rcv6b")
@@ -381,5 +382,8 @@ zoom = Vector2(5, 5)
 [node name="pause_menu" parent="Camera2D" instance=ExtResource("3_w7o5x")]
 visible = false
 
+[node name="HUD" parent="Camera2D" instance=ExtResource("4_0f2wp")]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_28uyl")

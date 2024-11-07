@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmp7i6t2b4s00"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_ey23l"]
+[ext_resource type="Texture2D" uid="uid://7ww3ss2pkqgr" path="res://assets/Sprites/objects.png" id="2_fqmtf"]
+[ext_resource type="LabelSettings" uid="uid://ba61jrjv4u1in" path="res://Big Font Centered.tres" id="3_lncck"]
+
+[node name="HUD" type="CanvasLayer" groups=["HUD"]]
+script = ExtResource("1_ey23l")
+
+[node name="PlayerHealth" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 195.0
+offset_bottom = 68.0
+
+[node name="Hearts" type="Sprite2D" parent="PlayerHealth"]
+position = Vector2(27, 23)
+scale = Vector2(3.96875, 3.96875)
+texture = ExtResource("2_fqmtf")
+hframes = 33
+vframes = 20
+frame = 8
+
+[node name="Money" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 81.0
+offset_top = -1.0
+offset_right = 305.0
+offset_bottom = 90.0
+
+[node name="Coins" type="Label" parent="Money"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 575.0
+offset_right = 233.0
+offset_bottom = 637.0
+text = "000
+"
+label_settings = ExtResource("3_lncck")
+
+[node name="Sprite" type="Sprite2D" parent="Money"]
+position = Vector2(-39, 608)
+scale = Vector2(5.34375, 5.34375)
+texture = ExtResource("2_fqmtf")
+hframes = 33
+vframes = 20
+frame = 132
