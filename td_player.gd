@@ -1,25 +1,23 @@
 extends CharacterBody2D
 
-
 const SPEED = 100.0
 const MAXIMUM_OBTAINABLE_HEALTH = 400.0
-enum STATES { IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING }
+enum  STATES { IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING }
 
 @export var data = {
-	"max_health": 100.0, # 20hp per heart, 5 per fraction
-	"health": 100.0,     # Min 60 Max 400
+	"max_health": 100.0,  # 20hp per heart, 5 per fraction
+	"health": 100.0,      # Min 60 Max 400
 	"money": 0,
 	"state": STATES.IDLE,
 	"secondaries": [],
 }
 
-
 var inertia = Vector2()
-var look_direction = Vector2.DOWN # Vector2(0,1)
+var look_direction = Vector2.DOWN  # Vector2(0,1)
 var attack_direction = look_direction
-var animation_lock = 0.0 # lock player during attack anim
-var damage_lock = 0.0 # i-frames
-var charge_time = 1.5
+var animation_lock = 0.0  # Lock player while playing attack animation
+var damage_lock = 0.0
+var charge_time = 2.5
 var charge_duration = 0.0
 
 var slash_scene = preload("res://enitities/attacks/slash.tscn")
@@ -43,20 +41,20 @@ func attack():
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
 	add_child(slash)
 	animation_lock = 0.2
-
+	
 func charged_attack():
 	data.state = STATES.ATTACKING
 	$AnimatedSprite2D.play("swipe_charge")
 	attack_direction = -look_direction
 	damage_lock = 0.3
 	for i in range(9):
-		# Offset by (i,4) * 45 degrees [-4,4]
+		# Offset by (i-4) * 45 degrees; [-4,4]
 		var angle = attack_direction.angle() + (i-4) * PI/4
-		var direction = Vector2(cos(angle),sin(angle))
+		var dir   = Vector2(cos(angle), sin(angle))
 		var slash = slash_scene.instantiate()
-		slash.position = direction * 20
-		slash.rotation = Vector2().angle_to_point(-direction)
-		slash.damage *= 1.5
+		slash.position = dir * 20
+		slash.rotation = Vector2().angle_to_point(-dir)
+		slash.damage  *= 1.5
 		add_child(slash)
 		await get_tree().create_timer(0.03).timeout
 	animation_lock = 0.2
@@ -64,42 +62,42 @@ func charged_attack():
 	data.state = STATES.IDLE
 
 func _ready() -> void:
-	#p_HUD.show()
-	pass
+	p_HUD.show()
 
 func pickup_health(value):
 	data.health += value
+	data.health = clamp(data.health, 0, data.max_health)
 
 func pickup_money(value):
 	data.money += value
-
+	
 signal health_depleted
 
 func take_damage(dmg):
-	if damage_lock == 0:
+	if damage_lock == 0.0:
 		data.health -= dmg
 		data.state = STATES.DAMAGED
 		damage_lock = 0.5
 		animation_lock = dmg * 0.005
 		# TODO: damage shader
 		if data.health > 0:
-			# TODO: Play damage sound
+			# TODO: play damage sound
 			pass
 		else:
 			data.state = STATES.DEAD
-			# TODO: play death anim and sound
-		await get_tree().create_timer(0.5).timeout
-		health_depleted.emit()
+			# TODO: play death animation & sound
+			await get_tree().create_timer(0.5).timeout
+			health_depleted.emit()
 	pass
 
 func _physics_process(delta: float) -> void:
 	animation_lock = max(animation_lock-delta, 0.0)
 	damage_lock = max(damage_lock-delta, 0.0)
 	
-	if animation_lock == 0 and data.state != STATES.DEAD:
+	if animation_lock == 0.0 and data.state != STATES.DEAD:
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
-		
+	
 		var direction = Vector2(
 			Input.get_axis("ui_left", "ui_right"),
 			Input.get_axis("ui_up", "ui_down")
@@ -114,25 +112,27 @@ func _physics_process(delta: float) -> void:
 		velocity += inertia
 		update_animation(direction)
 		move_and_slide()
-		inertia = inertia.move_toward(Vector2.ZERO, delta * 1000)
+		inertia = inertia.move_toward(Vector2.ZERO, delta * 1000.0)
+	
+	if data.state != STATES.DEAD:
+		if Input.is_action_just_pressed("ui_accept"):
+			attack()
+			charge_duration = 0.0
+			data.state = STATES.CHARGING
 		
-		if data.state != STATES.DEAD:
-			if Input.is_action_just_pressed("ui_accept"):
-				attack()
-				charge_duration = 0.0
-				data.state = STATES.CHARGING
+		charge_duration += delta
+		if Input.is_action_just_released("ui_accept"):
+			if charge_duration >= charge_time and \
+			   data.state == STATES.CHARGING:
+				charged_attack()
+			else:
+				data.state = STATES.IDLE
 			
-			charge_duration += delta
-			if Input.is_action_just_released("ui_accept"):
-				if charge_duration >= charge_time and data.state == STATES.CHARGING:
-					charged_attack()
-				else:
-					data.state = STATES.IDLE
-		
 	if Input.is_action_just_pressed("ui_cancel"):
 		$Camera2D/pause_menu.show()
 		get_tree().paused = true
 	pass
+
 
 func update_animation(direction):
 	if data.state == STATES.IDLE:
@@ -142,9 +142,9 @@ func update_animation(direction):
 		if look_direction.x != 0:
 			a_name += "side"
 			$AnimatedSprite2D.flip_h = look_direction.x < 0
-		elif look_direction.y <0:
+		elif look_direction.y < 0:
 			a_name += "up"
-		elif look_direction.y >0:
+		elif look_direction.y > 0:
 			a_name += "down"
 		$AnimatedSprite2D.animation = a_name
 		$AnimatedSprite2D.play()
