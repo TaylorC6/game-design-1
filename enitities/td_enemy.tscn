@@ -172,8 +172,7 @@ shape = SubResource("RectangleShape2D_37wts")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1gigm")
-animation = &"walk_up"
-frame_progress = 0.705222
+animation = &"walk_right"
 
 [node name="RayCast2DR" type="RayCast2D" parent="."]
 target_position = Vector2(-48, -24)
