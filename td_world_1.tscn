@@ -42,3 +42,11 @@ position = Vector2(35, -65)
 [node name="td_enemy2" parent="." instance=ExtResource("5_ncad2")]
 position = Vector2(-35, -65)
 scale = Vector2(-1, 1)
+
+[node name="td_enemy3" parent="." instance=ExtResource("5_ncad2")]
+position = Vector2(1, -95)
+scale = Vector2(-1, 1)
+
+[node name="td_enemy4" parent="." instance=ExtResource("5_ncad2")]
+position = Vector2(0, -134)
+scale = Vector2(-1, 1)
