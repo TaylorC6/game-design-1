@@ -383,7 +383,10 @@ zoom = Vector2(5, 5)
 visible = false
 
 [node name="HUD" parent="Camera2D" instance=ExtResource("4_0f2wp")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_28uyl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

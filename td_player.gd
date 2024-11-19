@@ -17,11 +17,20 @@ var look_direction = Vector2.DOWN  # Vector2(0,1)
 var attack_direction = look_direction
 var animation_lock = 0.0  # Lock player while playing attack animation
 var damage_lock = 0.0
-var charge_time = 2.5
+var charge_time = 1.25
 var charge_duration = 0.0
 
-var slash_scene = preload("res://enitities/attacks/slash.tscn")
+var slash_scene  = preload("res://enitities/attacks/slash.tscn")
+var damage_shader = preload("res://assets/shaders/take_damage.tres")
+var attack_sound = preload("res://Sounds/slash.wav")
+# TODO: Add and preload sounds - death, hurt, 
+#       *minicoin*, *miniheart*, charge_attack
+#       aud_player.stream = whatever_sound
+#       aud_player.play()
+var coin_sound = preload("res://Sounds/coin.wav")
+var heart_sound = preload("res://Sounds/heal.wav")
 
+@onready var aud_player = $AudioStreamPlayer2D
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 
 func get_direction_name():
@@ -40,6 +49,8 @@ func attack():
 	slash.position = attack_direction * 20.0
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
 	add_child(slash)
+	aud_player.stream = attack_sound
+	aud_player.play()
 	animation_lock = 0.2
 	
 func charged_attack():
@@ -67,10 +78,14 @@ func _ready() -> void:
 func pickup_health(value):
 	data.health += value
 	data.health = clamp(data.health, 0, data.max_health)
+	aud_player.stream = heart_sound
+	aud_player.play()
 
 func pickup_money(value):
 	data.money += value
-	
+	aud_player.stream = coin_sound
+	aud_player.play()
+
 signal health_depleted
 
 func take_damage(dmg):
@@ -79,7 +94,8 @@ func take_damage(dmg):
 		data.state = STATES.DAMAGED
 		damage_lock = 0.5
 		animation_lock = dmg * 0.005
-		# TODO: damage shader
+		$AnimatedSprite2D.material = damage_shader.duplicate()
+		$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.5)
 		if data.health > 0:
 			# TODO: play damage sound
 			pass
@@ -94,7 +110,16 @@ func _physics_process(delta: float) -> void:
 	animation_lock = max(animation_lock-delta, 0.0)
 	damage_lock = max(damage_lock-delta, 0.0)
 	
+	if Input.is_action_just_pressed("ui_select"):
+		for entity in get_tree().get_nodes_in_group("Interactable"):
+			if entity in range(self):
+				entity.interact(self)
+				data.state = STATES.IDLE
+				return
+	
 	if animation_lock == 0.0 and data.state != STATES.DEAD:
+		if data.state == STATES.DAMAGED and max(damage_lock-delta, 0.0):
+			$AnimatedSprite2D.material = null;
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
 	
