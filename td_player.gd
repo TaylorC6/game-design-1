@@ -111,8 +111,8 @@ func _physics_process(delta: float) -> void:
 	damage_lock = max(damage_lock-delta, 0.0)
 	
 	if Input.is_action_just_pressed("ui_select"):
-		for entity in get_tree().get_nodes_in_group("Interactable"):
-			if entity in range(self):
+		for entity in get_tree().get_nodes_in_group("Interactables"):
+			if entity.in_range(self):
 				entity.interact(self)
 				data.state = STATES.IDLE
 				return

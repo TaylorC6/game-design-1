@@ -51,8 +51,8 @@ signal recovered
 @onready var aud_player = $AudioStreamPlayer2D
 
 var drops = ["drop_coin","drop_heart"]
-var coin_scene = preload("res://enitities/coins.tscn")
-var heart_scene = preload("res://enitities/mini_heart.tscn")
+var coin_scene = preload("res://enitities/items/coins.tscn")
+var heart_scene = preload("res://enitities/items/mini_heart.tscn")
 var damage_shader = preload("res://assets/shaders/take_damage.tres")
 var death_sound = preload("res://Sounds/enemy_death.wav")
 var hit_sound = preload("res://Sounds/hit.wav")

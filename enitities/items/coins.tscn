@@ -1,22 +1,22 @@
 [gd_scene load_steps=9 format=3 uid="uid://37ca7512so3j"]
 
-[ext_resource type="Texture2D" uid="uid://7ww3ss2pkqgr" path="res://assets/Sprites/objects.png" id="1_mdto6"]
-[ext_resource type="Script" path="res://enitities/coins.gd" id="1_xuare"]
+[ext_resource type="Script" path="res://enitities/items/coins.gd" id="1_ntaj6"]
+[ext_resource type="Texture2D" uid="uid://7ww3ss2pkqgr" path="res://assets/Sprites/objects.png" id="2_dr87f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lxpy"]
-atlas = ExtResource("1_mdto6")
+atlas = ExtResource("2_dr87f")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8o3nc"]
-atlas = ExtResource("1_mdto6")
+atlas = ExtResource("2_dr87f")
 region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwc0r"]
-atlas = ExtResource("1_mdto6")
+atlas = ExtResource("2_dr87f")
 region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2km28"]
-atlas = ExtResource("1_mdto6")
+atlas = ExtResource("2_dr87f")
 region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7hwmu"]
@@ -42,7 +42,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7bts"]
 
 [node name="coins" type="Node2D"]
-script = ExtResource("1_xuare")
+script = ExtResource("1_ntaj6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7hwmu")

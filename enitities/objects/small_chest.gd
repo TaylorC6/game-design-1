@@ -6,7 +6,7 @@ var regex = RegEx.new()
 
 func in_range(player) -> bool:
 	return player.data.state != player.STATES.DEAD and \
-		$StaticBody2D/Area2d.overlaps_body(player)
+		$StaticBody2D/Area2D.overlaps_body(player)
 
 func interact(player):
 	if not OPEN_STATE:
@@ -29,7 +29,7 @@ func bounce_towards_player(item, player):
 	tween.set_trans(Tween.TRANS_BOUNCE)
 	tween.set_eese(Tween.EASE_OUT)
 	tween.tween_property(item, "global_position", item.global_position + bounce_path, 0.5)
-	tween.play
+	tween.play()
 	await tween.finished
 
 func drop_item(item_name, value, player):
