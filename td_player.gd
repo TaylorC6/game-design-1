@@ -81,6 +81,15 @@ func pickup_health(value):
 	aud_player.stream = heart_sound
 	aud_player.play()
 
+
+func pickup_heart(value):
+	data.health += value
+	data.max_health += value
+	p_HUD.draw_hearts()
+	data.health = clamp(data.health, 0, data.max_health)
+	aud_player.stream = heart_sound
+	aud_player.play()
+
 func pickup_money(value):
 	data.money += value
 	aud_player.stream = coin_sound

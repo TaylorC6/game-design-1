@@ -27,13 +27,13 @@ func bounce_towards_player(item, player):
 					Vector2(randf_range(-10.0, 10.0), randf_range(-10.0, 10.0))
 	var tween = get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_BOUNCE)
-	tween.set_eese(Tween.EASE_OUT)
+	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(item, "global_position", item.global_position + bounce_path, 0.5)
 	tween.play()
 	await tween.finished
 
 func drop_item(item_name, value, player):
-	var scene_name = "res://assets/entities/items/%s.tscn" %  regex.sub(item_name, "")
+	var scene_name = "res://enitities/items/%s.tscn" %  regex.sub(item_name, "")
 	var item_scene = load(scene_name)
 	var item = item_scene.instantiate()
 	item.bounce = false

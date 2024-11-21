@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c1fwwy7pdixhv"]
+[gd_scene load_steps=14 format=4 uid="uid://c1fwwy7pdixhv"]
 
 [ext_resource type="TileSet" uid="uid://5sefdbudop3n" path="res://tilesets.tres" id="1_57kw0"]
 [ext_resource type="Script" path="res://td_world_1.gd" id="1_80f4g"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://change_lvl.gd" id="6_2uunr"]
 [ext_resource type="AudioStream" uid="uid://bqbeqlyjh42ou" path="res://Sounds/overworld.mp3" id="6_avmkb"]
 [ext_resource type="PackedScene" uid="uid://band7onwt1ey4" path="res://enitities/objects/SmallChest.tscn" id="9_70ltb"]
+[ext_resource type="PackedScene" uid="uid://unydw26rcrg8" path="res://enitities/items/heart_container.tscn" id="10_etc3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84fqi"]
 size = Vector2(55, 51)
@@ -49,7 +50,7 @@ shape = SubResource("RectangleShape2D_84fqi")
 
 [node name="td_player" parent="." instance=ExtResource("2_dkr7q")]
 z_index = 2795
-position = Vector2(-8, -3)
+position = Vector2(-9, 4)
 
 [node name="mini_heart" parent="." instance=ExtResource("3_hycim")]
 visible = false
@@ -88,7 +89,14 @@ volume_db = 10.0
 [node name="SmallChest" parent="." instance=ExtResource("9_70ltb")]
 position = Vector2(-24, -52)
 contents = {
+"coins": 10,
+"coins2": 10,
+"coins3": 10,
+"heart_container": 20,
 "mini_heart": 5
 }
+
+[node name="heart_container" parent="." instance=ExtResource("10_etc3m")]
+position = Vector2(41, 14)
 
 [connection signal="body_entered" from="Change_lvl" to="Change_lvl" method="_on_body_entered"]
