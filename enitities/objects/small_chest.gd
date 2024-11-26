@@ -1,8 +1,10 @@
 extends Node2D
 
 @export var contents: Dictionary = {}
+@export var enem = false
 var OPEN_STATE = false
 var regex = RegEx.new()
+@onready var enemy = preload("res://enitities/td_enemy.tscn")
 
 func in_range(player) -> bool:
 	return player.data.state != player.STATES.DEAD and \
@@ -15,6 +17,11 @@ func interact(player):
 func open_chest(player):
 	OPEN_STATE = true
 	$Sprite2D.frame = 1
+	if enem:
+		for num in range(3):
+			var en = enemy.instantiate()
+			en.global_position = self.global_position + Vector2(0,1)
+			get_tree().current_scene.add_child(en)
 	for item in contents.keys():
 		drop_item(item, contents[item], player)
 		await get_tree().create_timer(0.5).timeout
@@ -36,6 +43,7 @@ func drop_item(item_name, value, player):
 	var scene_name = "res://enitities/items/%s.tscn" %  regex.sub(item_name, "")
 	var item_scene = load(scene_name)
 	var item = item_scene.instantiate()
+	
 	item.bounce = false
 	if value != 1: item.value = value
 	item.global_position = self.global_position

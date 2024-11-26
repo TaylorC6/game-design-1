@@ -24,7 +24,7 @@ var slash_scene  = preload("res://enitities/attacks/slash.tscn")
 var damage_shader = preload("res://assets/shaders/take_damage.tres")
 var attack_sound = preload("res://Sounds/slash.wav")
 # TODO: Add and preload sounds - death, hurt, 
-#       *minicoin*, *miniheart*, charge_attack
+#       charge_attack
 #       aud_player.stream = whatever_sound
 #       aud_player.play()
 var coin_sound = preload("res://Sounds/coin.wav")
