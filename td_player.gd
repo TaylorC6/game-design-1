@@ -23,12 +23,11 @@ var charge_duration = 0.0
 var slash_scene  = preload("res://enitities/attacks/slash.tscn")
 var damage_shader = preload("res://assets/shaders/take_damage.tres")
 var attack_sound = preload("res://Sounds/slash.wav")
-# TODO: Add and preload sounds - death, hurt, 
-#       charge_attack
-#       aud_player.stream = whatever_sound
-#       aud_player.play()
 var coin_sound = preload("res://Sounds/coin.wav")
 var heart_sound = preload("res://Sounds/heal.wav")
+var death_sound = preload("res://Sounds/enemy_death.wav")
+var hurt_sound = preload("res://Sounds/hit.wav")
+var charge_sound = preload("res://Sounds/powerUp.wav")
 
 @onready var aud_player = $AudioStreamPlayer2D
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
@@ -56,6 +55,8 @@ func attack():
 func charged_attack():
 	data.state = STATES.ATTACKING
 	$AnimatedSprite2D.play("swipe_charge")
+	aud_player.stream = charge_sound
+	aud_player.play()
 	attack_direction = -look_direction
 	damage_lock = 0.3
 	for i in range(9):
@@ -98,7 +99,7 @@ func pickup_money(value):
 signal health_depleted
 
 func take_damage(dmg):
-	if damage_lock == 0.0:
+	if damage_lock == 0.0 and data.state != STATES.DEAD:
 		data.health -= dmg
 		data.state = STATES.DAMAGED
 		damage_lock = 0.5
@@ -106,11 +107,17 @@ func take_damage(dmg):
 		$AnimatedSprite2D.material = damage_shader.duplicate()
 		$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.5)
 		if data.health > 0:
-			# TODO: play damage sound
+			aud_player.stream = hurt_sound #take damage func
+			aud_player.play()
 			pass
 		else:
 			data.state = STATES.DEAD
-			# TODO: play death animation & sound
+			aud_player.stream = death_sound
+			aud_player.play()
+			for i in range(15):
+					var angle = PI/180 * 6
+					self.rotate(angle)
+					await get_tree().create_timer(0.01).timeout
 			await get_tree().create_timer(0.5).timeout
 			health_depleted.emit()
 	pass
@@ -166,7 +173,8 @@ func _physics_process(delta: float) -> void:
 		$Camera2D/pause_menu.show()
 		get_tree().paused = true
 	pass
-
+	
+	
 
 func update_animation(direction):
 	if data.state == STATES.IDLE:
