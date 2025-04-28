@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://88qnv41xsjnh"]
 
 [ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="1_nbpcq"]
-[ext_resource type="Script" path="res://lp_4_2.gd" id="1_sy3fs"]
+[ext_resource type="Script" uid="uid://b4dr7nwey3iah" path="res://lp_4_2.gd" id="1_sy3fs"]
 [ext_resource type="Theme" uid="uid://chp13krld84ky" path="res://Biggish Font.tres" id="2_fu8p4"]
 
 [sub_resource type="Theme" id="Theme_4cb6f"]

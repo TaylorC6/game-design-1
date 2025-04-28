@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsdxgq8pybvl4"]
 
-[ext_resource type="Script" path="res://Langdocs/prog_58b.gd" id="1_bofpi"]
+[ext_resource type="Script" uid="uid://colqkmid0xkk4" path="res://Langdocs/prog_58b.gd" id="1_bofpi"]
 [ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="2_pwlki"]
 
 [node name="prog58b" type="Control"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brmcw71smn0fb"]
 
 [ext_resource type="Theme" uid="uid://chp13krld84ky" path="res://Biggish Font.tres" id="1_fx1c7"]
-[ext_resource type="Script" path="res://prog_122c.gd" id="1_u0ea8"]
+[ext_resource type="Script" uid="uid://d0wk1e613wxcj" path="res://prog_122c.gd" id="1_u0ea8"]
 [ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="2_uajcv"]
 
 [node name="prog_122c" type="Control"]

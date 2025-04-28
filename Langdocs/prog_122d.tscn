@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dekokms523r23"]
 
-[ext_resource type="Script" path="res://prog_122d.gd" id="1_p3smv"]
+[ext_resource type="Script" uid="uid://cyw1dtgf5wim3" path="res://prog_122d.gd" id="1_p3smv"]
 [ext_resource type="Theme" uid="uid://chp13krld84ky" path="res://Biggish Font.tres" id="2_apeul"]
 [ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="3_oev5t"]
 

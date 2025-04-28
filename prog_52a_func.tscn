@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hqp7f0b6g4in"]
 
-[ext_resource type="Script" path="res://prog_52a_func.gd" id="1_a82q4"]
+[ext_resource type="Script" uid="uid://ct8ma7j7bgfrp" path="res://prog_52a_func.gd" id="1_a82q4"]
 [ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="2_io7id"]
 
 [node name="Prog_52a_Func" type="Control"]

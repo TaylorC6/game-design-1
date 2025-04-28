@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://unydw26rcrg8"]
 
-[ext_resource type="Script" path="res://enitities/items/heart_container.gd" id="1_4huxq"]
+[ext_resource type="Script" uid="uid://b0532e2j3mftq" path="res://enitities/items/heart_container.gd" id="1_4huxq"]
 [ext_resource type="Texture2D" uid="uid://7ww3ss2pkqgr" path="res://assets/Sprites/objects.png" id="1_gck07"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3epmv"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://5sefdbudop3n" path="res://tilesets.tres" id="1_u6rd5"]
 [ext_resource type="PackedScene" uid="uid://bcvi4j7mfmuyo" path="res://td_player.tscn" id="2_b6pre"]
-[ext_resource type="Script" path="res://change_lvl.gd" id="3_b0ytw"]
+[ext_resource type="Script" uid="uid://b1dguvprsmghn" path="res://change_lvl.gd" id="3_b0ytw"]
 [ext_resource type="PackedScene" uid="uid://band7onwt1ey4" path="res://enitities/objects/SmallChest.tscn" id="4_4vwg4"]
 [ext_resource type="PackedScene" uid="uid://3pwvpcjwyogk" path="res://enitities/td_enemy.tscn" id="5_h3hcd"]
 

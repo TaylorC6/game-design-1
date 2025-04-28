@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfe4f0e4vd5qu"]
 
-[ext_resource type="Script" path="res://prog_115a.gd" id="1_x8qla"]
+[ext_resource type="Script" uid="uid://dttuwestprceq" path="res://prog_115a.gd" id="1_x8qla"]
 [ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="2_8yr2r"]
 
 [node name="prog_115a" type="Control"]

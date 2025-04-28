@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://3pwvpcjwyogk"]
 
 [ext_resource type="Texture2D" uid="uid://cpcqqyfbqfqku" path="res://assets/Sprites/log.png" id="1_jrwqg"]
-[ext_resource type="Script" path="res://enitities/td_enemy.gd" id="1_yaglj"]
+[ext_resource type="Script" uid="uid://bu86bc278x64r" path="res://enitities/td_enemy.gd" id="1_yaglj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t23h1"]
 size = Vector2(25, 26)

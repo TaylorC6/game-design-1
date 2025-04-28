@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://uv5i2akpxsle"]
 
-[ext_resource type="Script" path="res://interact.gd" id="1_de8le"]
+[ext_resource type="Script" uid="uid://2cnxf61y0ir5" path="res://interact.gd" id="1_de8le"]
 [ext_resource type="Texture2D" uid="uid://gn7p4osyfrb5" path="res://assets/Sprites/phase-2.png" id="2_5fdj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuuj4"]

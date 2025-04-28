@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlqoc65a1fuu7"]
 
-[ext_resource type="Script" path="res://prog_93a.gd" id="1_22ujx"]
+[ext_resource type="Script" uid="uid://cwg2boisev40g" path="res://prog_93a.gd" id="1_22ujx"]
 [ext_resource type="Theme" uid="uid://g8y3r3oufsf5" path="res://Big Font.tres" id="1_yd4vt"]
 
 [sub_resource type="Theme" id="Theme_y11t5"]
